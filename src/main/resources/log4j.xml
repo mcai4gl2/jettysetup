@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j">
+    <logger name="org.springframework">
+        <level value="FATAL" />
+    </logger>
+    <appender name="server.console.log" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d{ABSOLUTE} [%X{RequestId}%X{RequestURL}] %5p %c{1}:%L - %m%n" />
+        </layout>
+    </appender>
+    <root>
+        <level value="debug" />
+        <appender-ref ref="server.console.log" />
+    </root>
+</log4j:configuration>
